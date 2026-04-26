@@ -1,8 +1,8 @@
 {
-  "name": "Wellness AI",
-  "short_name": "Wellness",
-"start_url": "/wellness-ai/",
-"scope": "/wellness-ai/",
+  "name": "Santosham - A wellness app",
+  "short_name": "Santosham",
+"start_url": "/santosham/",
+"scope": "/santosham/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#4facfe",
