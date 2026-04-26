@@ -1,10 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
+<link rel="icon" href="./icon.png">
 <meta charset="utf-8"/>
 
-<title>Wellness</title>
+<title>Santosham</title>
 
 <!-- PWA -->
 <link rel="manifest" href="/manifest.json">
@@ -2663,13 +2664,244 @@ body.dark #achEmpty{
   50%{ transform:translateY(-5px); }
 }
 
+.settings-hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px;
+  border-radius:28px;
+  background:linear-gradient(135deg,rgba(30,30,40,0.95),rgba(20,20,30,0.9));
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  margin-bottom:18px;
+}
+
+.settings-hero h3{
+  margin:0;
+  font-size:26px;
+  color:#f1f5f9;
+}
+
+.settings-hero p{
+  margin:6px 0 0;
+  font-size:13px;
+  color:#94a3b8;
+  font-weight:600;
+}
+
+.breathing-hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px;
+  border-radius:28px;
+  background:#181821; /* DARK FIX */
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  margin-bottom:18px;
+}
+
+.breathing-hero h3{
+  margin:0;
+  font-size:26px;
+  color:#ffffff;
+}
+
+.breathing-hero p{
+  margin:6px 0 0;
+  font-size:13px;
+  color:#9ca3af;
+  font-weight:600;
+}
+
+
+/* ===================== */
+
+.games-hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px;
+  border-radius:28px;
+  background:#181821; /* SAME DARK */
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  margin-bottom:18px;
+}
+
+.games-hero h3{
+  margin:0;
+  font-size:26px;
+  color:#ffffff;
+}
+
+.games-hero p{
+  margin:6px 0 0;
+  font-size:13px;
+  color:#9ca3af;
+  font-weight:600;
+}
+
+@keyframes floaty{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-4px); }
+}
+
+@keyframes glowPulse{
+  0%{ box-shadow:0 14px 28px rgba(0,0,0,0.4); }
+  50%{ box-shadow:0 18px 34px rgba(0,0,0,0.55); }
+  100%{ box-shadow:0 14px 28px rgba(0,0,0,0.4); }
+}
+.settings-icon,
+.breathing-icon,
+.games-icon{
+  width:52px;
+  height:52px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+
+  background:#181821; /* DARK BASE */
+  color:#ffffff; /* emoji visible rahe */
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+
+  animation: floaty 3s ease-in-out infinite;
+}
+/* DARK MODE FIX FOR ALL HERO SECTIONS */
+.dark .breathing-hero,
+.dark .games-hero,
+.dark .settings-hero{
+  background:#181821;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.dark .breathing-hero h3,
+.dark .games-hero h3,
+.dark .settings-hero h3{
+  color:#ffffff;
+}
+
+.dark .breathing-hero p,
+.dark .games-hero p,
+.dark .settings-hero p{
+  color:#9ca3af;
+}
+/* FINAL OVERRIDE FIX (DON’T TOUCH ANYTHING ELSE) */
+
+body.dark .breathing-hero,
+body.dark .games-hero,
+body.dark .settings-hero{
+  background:#181821 !important;
+  border:1px solid rgba(255,255,255,0.08) !important;
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+}
+
+body.dark .breathing-hero h3,
+body.dark .games-hero h3,
+body.dark .settings-hero h3{
+  color:#ffffff !important;
+}
+
+body.dark .breathing-hero p,
+body.dark .games-hero p,
+body.dark .settings-hero p{
+  color:#9ca3af !important;
+}
+/* FIX BOTH LIGHT + DARK CLEANLY */
+
+/* LIGHT MODE FORCE */
+body:not(.dark) .breathing-hero,
+body:not(.dark) .games-hero,
+body:not(.dark) .settings-hero{
+  background:linear-gradient(135deg,rgba(255,255,255,0.96),rgba(232,248,245,0.92)) !important;
+  border:1px solid rgba(47,111,104,0.12) !important;
+
+  box-shadow:
+    0 16px 35px rgba(47,111,104,0.13),
+    inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+/* DARK MODE */
+body.dark .breathing-hero,
+body.dark .games-hero,
+body.dark .settings-hero{
+  background:#181821 !important;
+  border:1px solid rgba(255,255,255,0.08) !important;
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+}
+
+/* TEXT FIX */
+body:not(.dark) .breathing-hero h3,
+body:not(.dark) .games-hero h3,
+body:not(.dark) .settings-hero h3{
+  color:#1f514c !important;
+}
+
+body.dark .breathing-hero h3,
+body.dark .games-hero h3,
+body.dark .settings-hero h3{
+  color:#ffffff !important;
+}
+/* MATCH FLOATY ICON COLORS WITH OTHER TABS */
+.settings-icon,
+.breathing-icon,
+.games-icon{
+  background:linear-gradient(
+    135deg,
+    rgb(79,176,168),
+    rgb(47,111,104)
+  ) !important;
+
+  box-shadow:
+    0 14px 28px rgba(47,111,104,0.28) !important;
+}
+
+.app{
+  max-width:430px !important;
+  width:100% !important;
+  height:100vh !important;
+  overflow:hidden !important;
+}
+
+nav button{
+  min-height:46px !important;
+  color:white !important;
+  font-size:12px !important;
+}
+
+nav button.active{
+  color:#225b55 !important;
+}
+
+section{
+  flex:1 !important;
+  overflow-y:auto !important;
+}
 
 /* CSS Ending*/
 </style>
 </head>
 <body>
 <div class="app">
-<header>🌿 Wellness</header>
+<header>🌿 Santosham</header>
 <nav>
   <button class="active primary" onclick="tab('companion',this)" data-i18n="companion"></button>
   <button class="primary" onclick="tab('myday',this)" data-i18n="myday"></button>
@@ -2680,6 +2912,7 @@ body.dark #achEmpty{
   <button class="primary" onclick="tab('food',this)" data-i18n="food"></button>
   <button class="primary" onclick="tab('games',this)" data-i18n="games"></button>
   <button class="primary" onclick="tab('achieve',this)" data-i18n="achieve"></button>
+  
 </nav>
 <section class="active" id="companion">
 <h3 data-i18n="companion"></h3>
@@ -2795,7 +3028,13 @@ body.dark #achEmpty{
 </section>
 
 <section id="fitness">
-<h3 data-i18n="breathingTab"></h3>
+<div class="breathing-hero">
+  <div>
+    <h3>🫁 Breathing</h3>
+    <p>Calm your mind and body</p>
+  </div>
+  <div class="breathing-icon">🫁</div>
+</div>
 <div id="breathContainer"><div id="breathCircle" data-i18n="start"></div></div>
 <button class="main app-btn" onclick="startBreathing()" data-i18n="start"></button>
 <button class="main app-btn" onclick="stopBreathing()" data-i18n="stop"></button>
@@ -2824,7 +3063,13 @@ body.dark #achEmpty{
 
 
 <section id="games">
-<h3 data-i18n="games"></h3>
+<div class="games-hero">
+  <div>
+    <h3>🎮 Mini Games</h3>
+    <p>Relax and have some fun</p>
+  </div>
+  <div class="games-icon">🎮</div>
+</div>
 <div id="gameList">
 <button class="main app-btn" onclick="openGame('grow')">🌱 Grow Your World</button>
 <button class="main app-btn" onclick="openGame('thoughts')">🫧 Thought Catcher</button>
@@ -2876,7 +3121,13 @@ body.dark #achEmpty{
 </div>
 
 <section id="settings">
-<h3 data-i18n="settings"></h3>
+<div class="settings-hero">
+  <div>
+    <h3>⚙️ Settings</h3>
+    <p>Customize your experience</p>
+  </div>
+  <div class="settings-icon">⚙️</div>
+</div>
 
 <div class="card">
   <b data-i18n="language"></b>
@@ -2904,13 +3155,16 @@ body.dark #achEmpty{
   <option value="calm" data-i18n="calmTheme"></option>
 </select>
 </div>
-<select id="toneSelect">
-  <option value="default">Normal</option>
-  <option value="friendly">Friendly</option>
-  <option value="concise">Concise</option>
-  <option value="playful">Playful</option>
-  <option value="thoughtful">Thoughtful</option>
-</select>
+<div class="card">
+  <b>🎭 Tone</b>
+  <select id="toneSelect">
+    <option value="default">Normal</option>
+    <option value="friendly">Friendly</option>
+    <option value="concise">Concise</option>
+    <option value="playful">Playful</option>
+    <option value="thoughtful">Thoughtful</option>
+  </select>
+</div>
 
 <div class="card">
   <b>🔇 Voice Reply</b>
@@ -2939,17 +3193,38 @@ body.dark #achEmpty{
 </section>
 </div>
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const bgSound = document.getElementById("bgSound");
+
+  if (bgSound) {
+    bgSound.volume = 0.3;
+
+    function startAudioOnce(){
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", startAudioOnce);
+      document.removeEventListener("touchstart", startAudioOnce);
+    }
+
+    document.addEventListener("click", startAudioOnce);
+    document.addEventListener("touchstart", startAudioOnce);
+  }
+
+  // ✅ translations yahan run honi chahiye
+  applyTranslations();
+
+});
 const translations = {
   en: {
-    companion: "💬Companion",
-    myday: "📆My Day",
-    breathingTab: "🫁Breathing",
-    settings: "⚙️Settings",
-    todo: "✅To-Do",
-    sleep: "🛌Sleep",
-    food: "🥗Food",
-    games: "🎮Mini Games",
-    achieve: "🏆Achievements",
+    companion: "💬 Companion",
+    myday: "📆 My Day",
+    breathingTab: "🫁 Breathing",
+    settings: "⚙️ Settings",
+    todo: "✅ To-Do",
+    sleep: "🛌 Sleep",
+    food: "🥗 Food",
+    games: "🎮 Mini Games",
+    achieve: "🏆 Achievements",
 
     talkPlaceholder: "💬 Talk to me…",
     addTask: "Add",
@@ -2984,75 +3259,74 @@ const translations = {
     pressGenerate: "Press Generate",
     noTasks: "No tasks yet. Add something ✨",
     noAchievements: "No achievements yet. Add your first one ✨"
-  }
-};
-function t(key) {
-  const value =
-    translations[currentLang]?.[key] ??
-    translations.en?.[key];
+  },
 
-  return value || `[${key}]`; // 👈 shows key instead of invisible UI
-}
+  hi: {
+    companion: "💬 साथी",
+    myday: "📆 मेरा दिन",
+    breathingTab: "🫁 साँस",
+    settings: "⚙️ सेटिंग्स",
+    todo: "✅ काम",
+    sleep: "🛌 नींद",
+    food: "🥗 खाना",
+    games: "🎮 मिनी गेम्स",
+    achieve: "🏆 उपलब्धियाँ",
+
+    talkPlaceholder: "💬 मुझसे बात करो…",
+    addTask: "जोड़ें",
+    newTask: "नया काम",
+    save: "सेव",
+    edit: "संपादित करें",
+    generate: "जनरेट",
+    foodName: "खाने का नाम",
+    responseLength: "उत्तर लंबाई",
+    small: "छोटा",
+    medium: "मध्यम",
+    large: "बड़ा",
+    analyze: "विश्लेषण",
+    language: "🈯 भाषा",
+    theme: "🎨 थीम",
+    voice: "🔊 आवाज़",
+    notifications: "💬 सूचनाएं",
+    resetApp: "ऐप रीसेट करें",
+    resetAllData: "सारा डेटा रीसेट करें",
+    previewVoice: "आवाज़ सुनें",
+    toggleNotifications: "सूचनाएं चालू/बंद",
+    defaultTheme: "डिफ़ॉल्ट",
+    darkTheme: "डार्क",
+    calmTheme: "शांत",
+    title: "शीर्षक",
+    whyItMattered: "यह क्यों महत्वपूर्ण था",
+    add: "जोड़ें",
+    breathing: "🫁 साँस",
+    start: "शुरू",
+    stop: "रोकें",
+    lock: "🔒 लॉक",
+    pressGenerate: "जनरेट दबाएं",
+    noTasks: "अभी कोई काम नहीं है ✨",
+    noAchievements: "अभी कोई उपलब्धि नहीं है ✨"
+  },
+
+  es: {},
+  fr: {},
+  de: {},
+  it: {},
+  pt: {},
+  ru: {},
+  ja: {},
+  ko: {},
+  zh: {},
+  ar: {}
+};
 
 let currentLang = "en";
-const baseText = {
-  companion: "💬Companion",
-  myday: "📆My Day",
-  breathingTab: "🫁Breathing",
-  settings: "⚙️Settings",
-  todo: "✅To-Do",
-  sleep: "🛌Sleep",
-  food: "🥗Food",
-  games: "🎮Mini Games",
-  achieve: "🏆Achievements",
-  talkPlaceholder: "💬 Talk to me…",
-  addTask: "Add",
-  newTask: "New task",
-  save: "Save",
-  edit: "Edit",
-  generate: "Generate",
-  foodName: "Food name",
-  responseLength: "Response length",
-  small: "Small",
-  medium: "Medium",
-  large: "Large",
-  analyze: "Analyze",
-  language: "🈯 Language",
-  theme: "🎨 Theme",
-  voice: "🔊 Voice",
-  notifications: "💬 Notifications",
-  resetApp: "Reset App",
-  resetAllData: "Reset All Data",
-  previewVoice: "Preview Voice",
-  toggleNotifications: "Toggle Notifications",
-  defaultTheme: "Default",
-  darkTheme: "Dark",
-  calmTheme: "Calm",
-  title: "Title",
-  whyItMattered: "Why it mattered",
-  add: "Add",
-  breathing: "🫁 Breathing",
-  start: "Start",
-  stop: "Stop",
-  lock: "🔒 Lock",
-  pressGenerate: "Press Generate",
-  noTasks: "No tasks yet. Add something ✨",
-  noAchievements: "No achievements yet. Add your first one ✨"
-};
 
-function applyTranslations() {
-  const t = translations[currentLang] || translations.en;
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (t[key]) el.textContent = t[key];
-  });
-
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-    const key = el.getAttribute("data-i18n-placeholder");
-    if (t[key]) el.placeholder = t[key];
-  });
+function t(key){
+  return translations[currentLang]?.[key] || translations.en[key] || key;
 }
+
+
+
 
 const chatArea = document.getElementById("chatArea");
 const todoList = document.getElementById("todoList");
@@ -4251,7 +4525,7 @@ function sendNotification(msg){
   if (!notificationsEnabled) return;
 
   if ("Notification" in window && Notification.permission === "granted") {
-    new Notification("🌿 Wellness", {
+    new Notification("🌿 Santosham", {
       body: msg
     });
   }
@@ -4856,7 +5130,7 @@ window.addEventListener("load", () => {
   // 📅 restore journal
   const saved = localStorage.getItem("myDayJournal");
   if (saved) daySummary.value = saved;
-  else daySummary.placeholder = t("pressGenerate")
+  else daySummary.placeholder = translations[currentLang].pressGenerate
 
   // 🌐 restore language
   const savedLang = localStorage.getItem("appLang");
@@ -4889,9 +5163,11 @@ if (savedTheme) {
     el.setAttribute("data-i18n","breathingTab");
   });
 
+  applyLanguage();
+
   toggleEmptyState();
   refreshTodoList();
-  applyTranslations();
+ 
 
 });
 
@@ -4982,10 +5258,10 @@ speak(clean);
     updateVoiceButton(); // back to mic if not speaking
   };
 
-  recognition.onerror = () => {
-    updateVoiceButton("speaking");
-    addBubble("⚠️ Voice error", "chat-bot");
-  };
+recognition.onerror = () => {
+  updateVoiceButton("idle");
+  addBubble("⚠️ Voice error", "chat-bot");
+};
 }
 
 /* 🔊 SPEAK AI */
@@ -5077,17 +5353,9 @@ document.addEventListener("change", (e) => {
 function loadVoices() {
   const list = speechSynthesis.getVoices();
 
-  // retry if voices not ready yet
   if (!list.length) {
     setTimeout(loadVoices, 200);
     return;
-    const savedIndex = localStorage.getItem("voice");
-
-if (savedIndex !== null && voices[savedIndex]) {
-  selectedVoice = voices[savedIndex];
-  document.getElementById("voiceSelect").value = savedIndex;
-}
-
   }
 
   voices = list;
@@ -5099,37 +5367,27 @@ if (savedIndex !== null && voices[savedIndex]) {
 
   voices.forEach((v, i) => {
     const opt = document.createElement("option");
-
-    // show ALL voices clearly
     opt.value = i;
     opt.textContent = `${v.name} — ${v.lang}`;
-
     dropdown.appendChild(opt);
   });
 
-  // just pick first available (NO language filtering)
-  selectedVoice = voices[0];
-  dropdown.value = 0;
-
-  console.log("All voices loaded:", voices);
-  setTimeout(() => {
   const savedName = localStorage.getItem("voiceName");
+  const savedIndex = localStorage.getItem("voice");
 
-  if (!savedName) return;
+  let selectedIndex = 0;
 
-  const match = voices.find(v => v.name === savedName);
-
-  if (match) {
-    selectedVoice = match;
-
-    const dropdown = document.getElementById("voiceSelect");
-    if (dropdown) {
-      dropdown.value = voices.indexOf(match);
-    }
+  if (savedName) {
+    const matchIndex = voices.findIndex(v => v.name === savedName);
+    if (matchIndex !== -1) selectedIndex = matchIndex;
+  } else if (savedIndex !== null && voices[savedIndex]) {
+    selectedIndex = Number(savedIndex);
   }
-}, 300);
 
+  selectedVoice = voices[selectedIndex];
+  dropdown.value = selectedIndex;
 }
+
 function applySavedVoice() {
   const savedIndex = localStorage.getItem("voice");
   const voicesList = speechSynthesis.getVoices();
@@ -5247,55 +5505,51 @@ function resetApp(){
 /* 🔄 LOAD SETTINGS ON START */
 
 
-function applyLanguage() {
+async function applyLanguage() {
   const lang = translations[currentLang] || translations.en;
 
-  // TEXT CONTENT
-  document.querySelectorAll("[data-i18n]").forEach(el => {
+  document.querySelectorAll("[data-i18n]").forEach(async (el) => {
     const key = el.getAttribute("data-i18n");
-    if (lang[key]) el.textContent = lang[key];
+    const englishText = translations.en[key] || key;
+
+    if (lang[key]) {
+      el.textContent = lang[key];
+    } else {
+      el.textContent = await translateText(englishText, currentLang);
+    }
   });
 
-  // PLACEHOLDERS
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(async (el) => {
     const key = el.getAttribute("data-i18n-placeholder");
-    if (lang[key]) el.placeholder = lang[key];
+    const englishText = translations.en[key] || key;
+
+    if (lang[key]) {
+      el.placeholder = lang[key];
+    } else {
+      el.placeholder = await translateText(englishText, currentLang);
+    }
   });
 }
-function changeLanguage() {
-  currentLang = document.getElementById("langSelect").value;
 
-  // ✅ use ONE consistent key
+async function changeLanguage() {
+  const langSelect = document.getElementById("langSelect");
+  currentLang = langSelect.value;
+
   localStorage.setItem("lang", currentLang);
-
-  applyTranslations();
-
-  // ✅ fix edit button text
-  if (typeof isEditing !== "undefined" && typeof editBtn !== "undefined") {
-    editBtn.textContent = isEditing
-      ? t("edit")
-      : t("lock"); // FIXED
-  }
-}
-
-  // save user preference
   localStorage.setItem("appLang", currentLang);
 
-  // apply translations
-  applyTranslations();
-
+  await applyLanguage();
+}
 
 function applyTranslations() {
-  const t = translations[currentLang];
+  const tObj = translations[currentLang];
+  if (!tObj) return;
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (t[key]) el.textContent = t[key];
-  });
-
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-    const key = el.getAttribute("data-i18n-placeholder");
-    if (t[key]) el.placeholder = t[key];
+    if (tObj[key]) {
+      el.textContent = tObj[key];
+    }
   });
 }
 
@@ -5311,47 +5565,6 @@ function closeModal(){
   document.getElementById("achModal").style.display = "none";
 }
 
-document.addEventListener("keydown", function(e) {
-  // allow Shift+Enter for new line
-  if (e.key === "Enter" && !e.shiftKey) {
-
-    // Companion (Send)
-    if (document.activeElement.id === "companionInput") {
-      e.preventDefault();
-      document.getElementById("sendBtn")?.click();
-    }
-
-    // To-Do (Add)
-    if (document.activeElement.id === "todoInput") {
-      e.preventDefault();
-      document.getElementById("addTodoBtn")?.click();
-    }
-
-    // Achievements (if input exists)
-    if (document.activeElement.id === "achInput") {
-      e.preventDefault();
-      document.getElementById("addAchBtn")?.click();
-    }
-
-    // Sleep (Save)
-    if (document.activeElement.id === "sleepInput") {
-      e.preventDefault();
-      document.getElementById("saveSleepBtn")?.click();
-    }
-
-    // Food (Analyze)
-    if (document.activeElement.id === "foodInput") {
-      e.preventDefault();
-      document.getElementById("analyzeFoodBtn")?.click();
-    }
-
-    // Thought Catcher (Process)
-    if (document.activeElement.id === "thoughtInput") {
-      e.preventDefault();
-      document.getElementById("processThoughtBtn")?.click();
-    }
-  }
-});
 document.addEventListener("keydown", function(e) {
   if (e.key === "Enter" && !e.shiftKey) {
 
@@ -5459,20 +5672,64 @@ async function translateText(text, lang) {
     return text;
   }
 }
-function t(key) {
-  const lang = currentLang || "en";
 
-  return (
-    translations[lang]?.[key] ??
-    translations.en?.[key] ??
-    key
-  );
+const bgSound = document.getElementById("bgSound");
+
+
+let isPlaying = false;
+
+function toggleSound(){
+  if(isPlaying){
+    bgSound.pause();
+  } else {
+    bgSound.play().catch(e => console.log("Blocked:", e));
+  }
+  isPlaying = !isPlaying;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const bgSound = document.getElementById("bgSound");
+
+  
+
+    function startAudioOnce(){
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", startAudioOnce);
+      document.removeEventListener("touchstart", startAudioOnce);
+    }
+
+    document.addEventListener("click", startAudioOnce);
+    document.addEventListener("touchstart", startAudioOnce);
+  }
+
+);
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+  // 🔥 FORCE ENGLISH EVERY TIME
+  currentLang = "en";
+
+  localStorage.setItem("lang", "en");
+  localStorage.setItem("appLang", "en");
+
+  const langSelect = document.getElementById("langSelect");
+
+  if (langSelect) {
+    langSelect.value = "en";
+    langSelect.onchange = changeLanguage;
+  }
+
+  await applyLanguage();
+});
 </script>
 <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
 }
 </script>
+<audio id="bgSound" loop>
+  <source src="../assets/sounds/nature.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
